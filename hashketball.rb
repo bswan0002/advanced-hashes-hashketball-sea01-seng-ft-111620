@@ -126,11 +126,13 @@ def game_hash
   }
 end
 
+
 def num_points_scored(name)
   game_hash.select do |key, innerHash|
     innerHash[:players].select { |player| return player[:points] if player[:player_name] == name }
   end
 end
+
 
 def shoe_size(name)
   game_hash.select do |key, innerHash|
@@ -138,11 +140,13 @@ def shoe_size(name)
   end
 end
 
+
 def team_colors(teamName)
   game_hash.select do |key, innerHash|
     return innerHash[:colors] if innerHash[:team_name] == teamName
   end
 end
+
 
 def team_names
   teams = []
@@ -151,6 +155,7 @@ def team_names
   end
   teams
 end
+
 
 def player_numbers(teamName)
   numbers = []
@@ -164,11 +169,13 @@ def player_numbers(teamName)
   numbers
 end
 
+
 def player_stats(playerName)
   game_hash.select do |key, innerHash|
     innerHash[:players].select { |player| return player if player[:player_name] == playerName }
   end
 end
+
 
 def big_shoe_rebounds
   shoeSize = 0
